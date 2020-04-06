@@ -1,5 +1,4 @@
 const {  Food } = require('../models');
-const jwt = require('jsonwebtoken');
 
 class UserController {
     static addFood (req, res){
@@ -7,7 +6,7 @@ class UserController {
         Food.create({
             title: input.title,
             price: input.price,
-            ingridients: input.ingredients,
+            ingredients: input.ingredients,
             tag: input.tag,
             UserId: req.UserId
 

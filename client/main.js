@@ -20,6 +20,28 @@ $(document).ready(()=>{
         localStorage.setItem('access_token', '')
         checkLogin();
     })
+    $('#addFoodForm').submit(e =>{
+        e.preventDefault();
+        let title = $('#title').val()
+        let price = $('#price').val()
+        let ingredients = $('#ingredients').val()
+        let tag = $('#tag').val()
+        console.log(title)
+        console.log(price)
+
+        $.ajax({
+            url: 'http://localhost:5000/foods/',
+            method: 'POST',
+            data: {
+                title,
+                price,
+                ingredients,
+                tag
+            }
+        }).done(data=>{
+            checkLogin();
+        }).fail()
+    })
 })
 
 function checkLogin(){
