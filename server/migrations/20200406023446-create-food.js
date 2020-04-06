@@ -14,7 +14,7 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      ingridients: {
+      ingredients: {
         type: Sequelize.STRING
       },
       tag: {

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   Food.init({
     title: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    ingridients: DataTypes.STRING,
+    ingredients: DataTypes.STRING,
     tag: DataTypes.STRING,
     UserId: DataTypes.INTEGER
   }, {sequelize})

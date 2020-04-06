@@ -2,8 +2,8 @@ $(document).ready(()=>{
     checkLogin();
     $('#loginForm').submit(e => {
         e.preventDefault();
-        let email = $('#exampleInputEmail1')
-        let password = $('#exampleInputPassword')
+        let email = $('#exampleInputEmail1').val()
+        let password = $('#exampleInputPassword').val()
         $.ajax({
             url: 'http://localhost:5000/login',
             method: 'POST',
@@ -14,7 +14,11 @@ $(document).ready(()=>{
         }).done(data=>{
             localStorage.setItem('access_token', data.access_token)
             checkLogin();
-        })
+        }).fail()
+    })
+    $('#logoutButton').click(()=>{
+        localStorage.setItem('access_token', '')
+        checkLogin();
     })
 })
 
